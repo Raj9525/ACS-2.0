@@ -1,0 +1,983 @@
+html,
+body {
+  font-family: "Roboto", "Proxima Nova", "Open Sans", "PT Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-style: normal;
+  font-weight: 100;
+}
+
+p {
+  margin: 0px;
+}
+
+.container {
+  position: absolute;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  /*height: 100%;*/
+  margin: 0;
+  padding: 0;
+  /*border: 0.5px solid black;*/
+}
+.header {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.1);
+}
+.logowrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 92.5%;
+  height: 20px;
+}
+.bankholder {
+  height: 22px;
+  position: absolute;
+  left: 0px;
+  display: flex;
+  align-items: center;
+}
+#bank_logo {
+  height: 100%;
+  object-fit: contain;
+}
+#yap {
+  position: absolute;
+  right: 0;
+  height: 26px;
+}
+.visaholder {
+  height: 12px;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  align-items: center;
+}
+.completewrap {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0 0 0;
+}
+.completewrapchild {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 92.5%;
+  height: 20px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+  padding: 0 0 5px 0;
+}
+.payment {
+  position: relative;
+  float: left;
+  font-size: 12px;
+  color: #373844;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+.cancelpayment {
+  position: absolute;
+  right: 0px;
+  font-size: 9.5px;
+  color: #0193fd;
+  margin: 0;
+}
+
+.customerdetailswrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  margin-top: 7px;
+}
+
+.totaltext {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 9px;
+  color: #737a8d;
+}
+.amount {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 8.5px;
+  color: #737a8d;
+  margin-top: 3px;
+}
+#amount {
+  font-size: 13px;
+  color: #373844;
+}
+.userdetails {
+  position: relative;
+  width: 90%;
+}
+td {
+  padding: 3px;
+}
+tr {
+  vertical-align: top;
+}
+.lable {
+  color: #737a8d;
+}
+.value {
+  color: #373844;
+}
+.tablewrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 9px;
+  margin-top: 1.5px;
+}
+
+.linealignwrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+.linealign {
+  position: relative;
+  width: 200px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+.expirewrapper {
+  position: relative;
+  width: 100%;
+  float: left;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 7px 0 0 0;
+}
+.expireinfo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 10px;
+  color: #ff6c47;
+}
+.expire {
+  margin: 0;
+}
+
+.actionarea {
+  position: relative;
+  float: left;
+  width: 100%;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.05);
+  padding: 7px 0px 25px 0;
+  border-radius: 25px 25px 0 0;
+  margin-top: 7px;
+  box-shadow: 0px -0.5px 6px 1px rgba(49, 49, 49, 0.05);
+}
+
+.tabwrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  float: left;
+  width: 100%;
+}
+
+.tabchild {
+  position: relative;
+  width: 168px;
+  font-size: 8.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otptab {
+  display: flex;
+  justify-content: center;
+  width: 56px;
+  height: 12px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+.otptab:active {
+  border-bottom: 1px solid rgba(1, 112, 253, 1);
+}
+
+.otptab:hover {
+  border-bottom: 1px solid rgba(1, 112, 253, 1);
+}
+
+.otptab:hover > #tab1 {
+  color: #0170fd;
+}
+
+.otptab:active > #tab1 {
+  color: #0170fd;
+}
+
+#tab1 {
+  position: relative;
+  text-decoration: none;
+  color: #969696;
+  outline: none;
+}
+
+.pintab {
+  display: flex;
+  justify-content: center;
+  width: 56px;
+  height: 12px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+.pintab:active {
+  border-bottom: 1px solid rgba(1, 112, 253, 1);
+}
+
+.pintab:hover {
+  border-bottom: 1px solid rgba(1, 112, 253, 1);
+}
+
+.pintab:hover > #tab2 {
+  color: #0170fd;
+}
+
+.pintab:active > #tab2 {
+  color: #0170fd;
+}
+
+#tab2 {
+  position: relative;
+  text-decoration: none;
+  color: #969696;
+}
+
+.passtab {
+  width: 56px;
+  height: 12px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+.passtab:active {
+  border-bottom: 1px solid rgba(1, 112, 253, 1);
+}
+
+.passtab:hover {
+  border-bottom: 1px solid rgba(1, 112, 253, 1);
+}
+
+.passtab:hover > #tab3 {
+  color: #0170fd;
+}
+
+.passtab:active > #tab3 {
+  color: #0170fd;
+}
+
+#tab3 {
+  position: relative;
+  text-decoration: none;
+  color: #969696;
+}
+
+.changingcontent {
+  position: relative;
+  float: left;
+  width: 100%;
+  /*height: 125px;*/
+  margin-top: 5px;
+}
+
+.otpcontent {
+  display: none;
+}
+
+.infomessagewrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.infomessage {
+  position: relative;
+  font-size: 9px;
+  color: #87888f;
+  margin: 0;
+  width: 198px;
+  line-height: 1.5;
+}
+
+.otpboxeswrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+  float: left;
+}
+
+.otpboxeswrapchild {
+  width: fit-content;
+  max-width: fit-content;
+}
+
+.otpbox {
+  width: 22px;
+  height: 22px;
+  border: 0.5px solid #d2e1ff;
+  text-align: center;
+  background: #ffffff;
+  outline: none;
+  border-radius: 2px;
+}
+
+.req {
+  padding: 0 0 0 0;
+  color: rgb(255, 0, 0);
+  max-height: auto;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+  z-index: 1;
+  font-style: italic;
+  font-size: 6px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #f1f3f8;
+  border: 0.5px solid red;
+  border-radius: 2px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 135px;
+  margin-top: 2px;
+}
+
+.otpresendwrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  width: 100%;
+  float: left;
+}
+
+.preauth {
+  width: 12px;
+  height: 12px;
+  margin: 0 3px 0 0;
+  border: #2a1563;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  width: 75px;
+}
+
+.labelpreauth {
+  font-size: 8.5px;
+  color: #2a1563;
+  cursor: pointer;
+}
+
+.seamlesspopup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: none;
+}
+
+.seamlesswrap {
+  position: relative;
+  font-size: 8.2px;
+  width: 90%;
+  z-index: 3000;
+  background-color: #fff;
+  border-radius: 11px;
+}
+
+.optinheader {
+  position: relative;
+  width: 100%;
+  float: left;
+  background-color: #f7f7ff;
+  border-radius: 11px 11px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.optinbody {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 15px 10px 15px 10px;
+}
+
+.optclose {
+  position: absolute;
+  right: 0;
+  margin: 10px;
+}
+
+.optintext {
+  font-size: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.radiowrap {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.choices {
+  display: none;
+}
+
+.seamlessdatewrap {
+  position: relative;
+  margin-top: 15px;
+}
+.seamlessdate {
+  display: flex;
+  align-items: center;
+}
+.seamlesstrans {
+  display: flex;
+  align-items: center;
+}
+
+.seamlesstrans {
+  position: absolute;
+  right: 0px;
+}
+
+.seamlessradio {
+  margin: 0 3px 0 0;
+}
+
+.datebox {
+  width: 90px;
+  height: 23px;
+  border: 0.5px solid #e1e7f3;
+  background: #f1f3f8;
+  outline: none;
+  border-radius: 2px;
+  font-size: 7px;
+  padding-left: 3.5px;
+}
+
+#todatebox {
+  position: absolute;
+  right: 0px;
+}
+
+.seamlessnooftrans {
+  position: relative;
+  margin-top: 15px;
+}
+
+.nooftrans {
+  width: 90px;
+  height: 23px;
+}
+
+.donewrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+.seamlessdone {
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  text-align: right;
+  margin: 10px;
+  float: right;
+  text-decoration: none;
+  color: #5f30e2;
+}
+
+.otpresendchild {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 187.84px;
+}
+
+.resendotpbtn1 {
+  position: absolute;
+  text-decoration: underline;
+  font-size: 8.5px;
+  margin: 0.5px;
+  right: 0;
+  color: #0170fd;
+  float: right;
+}
+
+.otpverifywrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  margin: 13px 0 0 0;
+}
+.ctabtn {
+  width: 167px;
+  height: 23px;
+  font-size: 10px;
+  -webkit-appearance: none;
+  color: #fff;
+  background-color: #109afd;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ctabtn:active {
+  background-color: #0088e9;
+  transform: translate(0, 0.5px);
+}
+.ctabtn:hover {
+  background-color: #0193fd;
+  box-shadow: 0 0px 6px 0 rgba(68, 149, 255, 0.5);
+}
+
+.pincontent {
+  display: none;
+}
+
+.enteratmwrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.enteratmchild {
+  position: relative;
+  width: 115px;
+  font-size: 8px;
+}
+
+.pinboxeswrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 4px;
+  float: left;
+}
+
+.pinboxeswrapchild {
+  width: fit-content;
+  max-width: fit-content;
+}
+
+.pinbox {
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid #e1e7f3;
+  text-align: center;
+  background: #ffffff;
+  outline: none;
+  border-radius: 2px;
+}
+
+.expirywrap {
+  position: relative;
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.expirychild {
+  position: relative;
+  width: 115.91px;
+  display: flex;
+}
+
+.expirybox {
+  width: 55.5px;
+  height: 26px;
+  border: 0.5px solid #e1e7f3;
+  text-align: left;
+  background: #ffffff;
+  font-size: 8px;
+  outline: none;
+  border-radius: 2px;
+  margin-top: 4px;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+
+.monthwrap {
+  position: relative;
+  font-size: 8px;
+}
+
+.yearwrap {
+  position: absolute;
+  right: 0px;
+  font-size: 8px;
+}
+
+.pinverifywrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  margin: 9px 0 0 0;
+}
+
+.pinverify:active {
+  background-color: #0088e9;
+  transform: translate(0, 0.5px);
+}
+.pinverify:hover {
+  background-color: #0193fd;
+  box-shadow: 0 0px 6px 0 rgba(68, 149, 255, 0.5);
+}
+
+.beforesetinfo {
+  margin-top: 40px;
+}
+
+.beforesetcontent {
+  display: none;
+}
+
+.beforesetpasswrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  margin: 45px 0 0 0;
+}
+
+.setpasscontent {
+  display: none;
+}
+
+.entersetotpwrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.entersetotp {
+  position: relative;
+  width: 175.84px;
+  font-size: 8px;
+}
+
+.setboxeswrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 4px;
+  float: left;
+}
+
+.setboxeswrapchild {
+  width: fit-content;
+  max-width: fit-content;
+}
+
+.setbox {
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid #e1e7f3;
+  text-align: center;
+  background: #ffffff;
+  outline: none;
+  border-radius: 2px;
+}
+
+.req {
+  padding: 0 0 0 0;
+  color: rgb(255, 0, 0);
+  max-height: auto;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+  z-index: 1;
+  font-style: italic;
+  font-size: 6px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #f1f3f8;
+  border: 0.5px solid red;
+  border-radius: 2px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 135px;
+  margin-top: 2px;
+}
+
+.setresendwrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+  float: left;
+}
+
+.setresendchild {
+  position: relative;
+  width: 175.5px;
+}
+
+.resendotpbtn2 {
+  position: relative;
+  text-decoration: underline;
+  font-size: 8.5px;
+  margin: 0.5px;
+  right: 0;
+  color: #0170fd;
+  float: right;
+}
+
+.passexpirywrap {
+  position: relative;
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.passexpirychild {
+  position: relative;
+  width: 175.84px;
+  display: flex;
+}
+
+.passexpirybox {
+  width: 85.5px;
+  height: 26px;
+  border: 0.5px solid #e1e7f3;
+  text-align: left;
+  background: #ffffff;
+  font-size: 8px;
+  outline: none;
+  border-radius: 2px;
+  margin-top: 4px;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+
+.passmonthwrap {
+  position: relative;
+  font-size: 8px;
+}
+
+.passyearwrap {
+  position: absolute;
+  right: 0px;
+  font-size: 8px;
+}
+
+.passcreatewrap {
+  position: relative;
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.passcreate {
+  position: relative;
+  font-size: 8px;
+}
+
+.passcreatebox {
+  width: 175.84px;
+  height: 26px;
+  border: 0.5px solid #e1e7f3;
+  text-align: left;
+  background: #ffffff;
+  font-size: 8px;
+  outline: none;
+  border-radius: 2px;
+  margin-top: 4px;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+
+.setverifywrap {
+  position: relative;
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  margin: 12px 0 12px 0;
+}
+
+.staticpasscontent {
+  display: none;
+}
+
+.staticpasswrap {
+  position: relative;
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.staticpass {
+  position: relative;
+  font-size: 6px;
+}
+
+.staticpassbox {
+  width: 175.84px;
+  height: 26px;
+  border: 0.5px solid #e1e7f3;
+  text-align: left;
+  background: #ffffff;
+  font-size: 8px;
+  outline: none;
+  border-radius: 2px;
+  margin-top: 4px;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+
+.staticresetwrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 4.5px;
+  width: 100%;
+  float: left;
+}
+
+.staticresetchild {
+  position: relative;
+  width: 175.5px;
+}
+
+.resetbtn {
+  position: relative;
+  text-decoration: underline;
+  font-size: 6px;
+  margin: 0.5px;
+  right: 0;
+  color: #0170fd;
+  float: right;
+}
+
+.resetpasscontent {
+  display: none;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f8fb;
+}
+.footerlogowrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 20px;
+}
+.partnerwrap {
+  position: absolute;
+  height: 12px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+}
+.partnerlogo {
+  height: 100%;
+  object-fit: contain;
+}
+.visapci {
+}
+.copyright {
+  position: absolute;
+  right: 0px;
+}

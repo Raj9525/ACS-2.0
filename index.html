@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACS 2.0</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        ::placeholder {
+            color: #CACACA;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: #CACACA;
+        }
+
+        ::-ms-input-placeholder {
+            color: #CACACA;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="seamlesspopup" id="seamlesspopup">
+        <div class="seamlesswrap" id="seamlesswrap">
+            <div class="optinheader">
+                <p class="optintext">Opt in for seamless pay</p>
+                <img src="img/crossbargrey.svg" class="optclose" id="optclose" onclick="closepopup();" alt="">
+            </div>
+            <div class="optinbody">
+                <div class="radiowrap">
+                    <div class="seamlessdate">
+                        <input type="radio" id="seamlessdate" class="seamlessradio" name="seamlessradio" value=""
+                            onclick="seamless(event, 'seamlessdatewrap','nooftrans');"
+                            style="-webkit-appearance: radio;">
+                        <label class="labelseamless" for="seamlessdate"> Select Date</label>
+                    </div>
+                    <div class="seamlesstrans">
+                        <input type="radio" id="seamlesstransactions" class="seamlessradio" name="seamlessradio"
+                            value="" onclick="seamless(event, 'seamlessnooftrans','todatebox');"
+                            style="-webkit-appearance: radio;">
+                        <label class="labelseamless" for="seamlesstransactions"> No. of Transactions</label>
+                    </div>
+                </div>
+                <div class="seamlessdatewrap choices" id="seamlessdatewrap">
+                    <p style="margin-left: 0px;">Today</p>
+                    <input type="date" class="datebox fromdatebox" id="fromdatebox" name="date[]" value=""
+                        placeholder=" " disabled />
+                    <input type="date" class="datebox todatebox" value="" id="todatebox" name="date[]" min=""
+                        max="2050-12-31" placeholder="To date" />
+                </div>
+                <div class="seamlessnooftrans choices" id="seamlessnooftrans">
+                    <p style="margin-left: 0px;">No. of Transactions</p>
+                    <select name="nooftrans" class="nooftrans" id="nooftrans">
+                        <option value="0">00</option>
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="donewrap">
+                <a class="seamlessdone" style="text-decoration: none;" onclick="donepopup();" href="#">Done</a>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="container">
+        <div class="header">
+            <div class="logowrapper">
+                <div class="bankholder">
+                    <img src="img/sbm.svg" id="bank_logo" />
+                </div>
+                <img src="img/YAP.svg" id="yap" />
+            </div>
+        </div>
+
+        <div class="completewrap">
+            <div class="completewrapchild">
+                <p class="payment">Complete payment</p>
+                <a href="#" class="cancelpayment">Cancel Transaction</a>
+            </div>
+        </div>
+
+        <div class="customerdetailswrap">
+            <div class="totaltext">
+                <p>TOTAL CHARGES</p>
+            </div>
+            <div class="amount">
+                <p><span id="amount">6000.00</span>&nbsp;INR</p>
+            </div>
+            <div class="tablewrap">
+                <table class="userdetails">
+                    <tr>
+                        <td class="lable">
+                            <p>Merchant Name</p>
+                        </td>
+                        <td class="value">
+                            <p>FSSS shopping Private limited</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lable">
+                            <p>Purchasing Date</p>
+                        </td>
+                        <td class="value">
+                            <p>November 08, 2020</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lable">
+                            <p>Card Number</p>
+                        </td>
+                        <td class="value">
+                            <p>XXXX XXXX XXXX 0001</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lable">
+                            <p>Cardholder Name</p>
+                        </td>
+                        <td class="value">
+                            <p>Cardholder</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="linealignwrap">
+                <div class="linealign">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="expirewrapper" id="expirewrapper">
+            <div class="expireinfo" id="expireinfo">
+                <p class="expire">Page will expire in <span id="minutes2"></span>:<span id="seconds2"></span> minutes
+                </p>
+            </div>
+        </div>
+
+
+        <div class="actionarea">
+
+            <div class="tabwrap">
+                <div class="tabchild" id="tabchild">
+                    <div class="otptab">
+                        <a href="#" class="tab" onclick="switching(event, 'otpcontent');" id="tab1"><span>OTP</span></a>
+                    </div>
+                    <div class="pintab">
+                        <a href="#" class="tab" onclick="switching(event, 'pincontent');" id="tab2"><span>ATM
+                                PIN</span></a>
+                    </div>
+                    <div class="passtab">
+                        <a href="#" class="tab" onclick="switching(event, 'beforesetcontent');"
+                            id="tab3"><span>PASSWORD</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changingcontent otpcontent" id="otpcontent">
+                <div class="infomessagewrap">
+                    <p class="infomessage">OTP for this transaction sent to your registered mobile number (*******098).
+                        Please enter in below field to complete
+                        payment.
+                    </p>
+                </div>
+
+                <div class="otpboxeswrap">
+                    <div class="otpboxeswrapchild">
+                        <input type="password" class="otpbox" id="otpbox1" name="OTP[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('otpbox1','otpbox2',this.pattern);otpemptied(event);"
+                            onkeydown="backsp(this, 'otpbox1');" />
+                        <input type="password" class="otpbox" id="otpbox2" name="OTP[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('otpbox2','otpbox3',this.pattern);otpemptied(event);"
+                            onkeydown="backsp(this, 'otpbox1');" disabled />
+                        <input type="password" class="otpbox" id="otpbox3" name="OTP[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('otpbox3','otpbox4',this.pattern);otpemptied(event);"
+                            onkeydown="backsp(this, 'otpbox2');" disabled />
+                        <input type="password" class="otpbox" id="otpbox4" name="OTP[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('otpbox4','otpbox5',this.pattern);otpemptied(event);"
+                            onkeydown="backsp(this, 'otpbox3');" disabled />
+                        <input type="password" class="otpbox" id="otpbox5" name="OTP[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('otpbox5','otpbox6',this.pattern);otpemptied(event);"
+                            onkeydown="backsp(this, 'otpbox4');" disabled />
+                        <input type="password" class="otpbox" id="otpbox6" name="OTP[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('otpbox6','otpverifybtn',this.pattern);otpemptied(event);"
+                            onkeydown="backsp(this, 'otpbox5');" disabled />
+                        <div class="req">
+                            Your OTP must be in numbers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="otpresendwrap">
+                    <div class="otpresendchild">
+                        <div class="checkbox">
+                            <input type="checkbox" id="preauth" class="preauth" name="optin" value="opt"
+                                onclick="preauthpopup();mindate();">
+                            <label class="labelpreauth" for="preauth"> SEAMLESS PAY</label><br>
+                        </div>
+                        <a href="#" class="resendotpbtn1" id="resendOTPbtn1" onclick="msgbox()">RESEND OTP</a>
+                    </div>
+                </div>
+
+                <div class="otpverifywrap">
+                    <button class="ctabtn">Verify & Proceed</button>
+                </div>
+            </div>
+
+
+            <div class="changingcontent pincontent" id="pincontent">
+                <div class="infomessagewrap">
+                    <p class="infomessage">Enter your ATM PIN and Expiry Month & Year
+                    </p>
+                </div>
+
+                <div class="enteratmwrap">
+                    <div class="enteratmchild">
+                        <p>ATM PIN</p>
+                    </div>
+                </div>
+
+                <div class="pinboxeswrap">
+                    <div class="pinboxeswrapchild">
+                        <input type="password" class="pinbox" id="pinbox1" name="pin[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('pinbox1','pinbox2',this.pattern);pinemptied(event);"
+                            onkeydown="backsp(this, 'pinbox1');" />
+                        <input type="password" class="pinbox" id="pinbox2" name="pin[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('pinbox2','pinbox3',this.pattern);pinemptied(event);"
+                            onkeydown="backsp(this, 'pinbox1');" disabled />
+                        <input type="password" class="pinbox" id="pinbox3" name="pin[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('pinbox3','pinbox4',this.pattern);pinemptied(event);"
+                            onkeydown="backsp(this, 'pinbox2');" disabled />
+                        <input type="password" class="pinbox" id="pinbox4" name="pin[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('pinbox4','pinbox5',this.pattern);pinemptied(event);"
+                            onkeydown="backsp(this, 'otpbox3');" disabled />
+                    </div>
+                </div>
+
+                <div class="expirywrap">
+                    <div class="expirychild">
+                        <div class="monthwrap">
+                            <p>Expiry Month</p>
+                            <input type="text" class="expirybox" id="month" name="expiry[]" maxlength="2" required
+                                placeholder="MM" pattern="(?=.*\d).{1,1}"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('expirybox4','expirybox5',this.pattern);expiryemptied(event);"
+                                onkeydown="backsp(this, 'otpbox3');" />
+                        </div>
+                        <div class="yearwrap">
+                            <p>Expiry Year</p>
+                            <input type="text" class="expirybox" id="year" name="expiry[]" maxlength="2" required
+                                placeholder="YY" pattern="(?=.*\d).{1,1}"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('expirybox4','expirybox5',this.pattern);expiryemptied(event);"
+                                onkeydown="backsp(this, 'otpbox3');" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pinverifywrap">
+                    <button class="ctabtn">Verify & Proceed</button>
+                </div>
+            </div>
+
+            <div class="changingcontent beforesetcontent" id="beforesetcontent">
+                <div class="infomessagewrap beforesetinfo">
+                    <p class="infomessage">Please Set Your Static Password.</br>
+                        Click to go
+                    </p>
+                </div>
+
+                <div class="beforesetpasswrap">
+                    <button class="ctabtn" onclick="switching(event, 'setpasscontent');">Set Password</button>
+                </div>
+
+            </div>
+
+            <div class="changingcontent setpasscontent" id="setpasscontent">
+                <div class="infomessagewrap">
+                    <p class="infomessage">Set Password
+                    </p>
+                </div>
+                <div class="entersetotpwrap">
+                    <div class="entersetotp">Enter OTP</div>
+                </div>
+                <div class="setboxeswrap">
+                    <div class="setboxeswrapchild">
+                        <input type="password" class="setbox" id="setbox1" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('setbox1','setbox2',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox1');" />
+                        <input type="password" class="setbox" id="setbox2" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('setbox2','setbox3',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox1');" disabled />
+                        <input type="password" class="setbox" id="setbox3" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('setbox3','setbox4',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox2');" disabled />
+                        <input type="password" class="setbox" id="setbox4" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('setbox4','setbox5',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox3');" disabled />
+                        <input type="password" class="setbox" id="setbox5" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('setbox5','setbox6',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox4');" disabled />
+                        <input type="password" class="setbox" id="setbox6" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('setbox6','setverifybtn',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox5');" disabled />
+                        <div class="req">
+                            Your OTP must be in numbers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setresendwrap">
+                    <div class="setresendchild">
+
+                        <a href="#" class="resendotpbtn2" id="resendOTPbtn2" onclick="msgbox()">RESEND OTP</a>
+                    </div>
+                </div>
+
+                <div class="passexpirywrap">
+                    <div class="passexpirychild">
+                        <div class="passmonthwrap">
+                            <p>Expiry Month</p>
+                            <input type="text" class="passexpirybox" id="passmonth" name="passexpiry[]" maxlength="2"
+                                required placeholder="MM" pattern="(?=.*\d).{1,1}"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                                onkeydown="backsp(this, 'otpbox3');" />
+                        </div>
+                        <div class="passyearwrap">
+                            <p>Expiry Year</p>
+                            <input type="text" class="passexpirybox" id="passyear" name="passexpiry[]" maxlength="2"
+                                required placeholder="YY" pattern="(?=.*\d).{1,1}"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                                onkeydown="backsp(this, 'otpbox3');" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="passcreatewrap">
+                    <div class="passcreate">
+                        <p>Create Password</p>
+                        <input type="text" class="passcreatebox" id="passcreatebox" name="passcreate[]" maxlength="20"
+                            required placeholder="Enter your password" pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                            onkeydown="backsp(this, 'otpbox3');" />
+                    </div>
+                </div>
+
+                <div class="passcreatewrap">
+                    <div class="passcreate">
+                        <p>Confirm Password</p>
+                        <input type="text" class="passcreatebox" id="passconfirmbox" name="passconfirm[]" maxlength="20"
+                            required placeholder="Confirm your password" pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                            onkeydown="backsp(this, 'otpbox3');" />
+                    </div>
+                </div>
+
+                <div class="setverifywrap">
+                    <button class="ctabtn">Set Password</button>
+                </div>
+            </div>
+
+            <div class="changingcontent staticpasscontent" id="staticpasscontent">
+                <div class="infomessagewrap">
+                    <p class="infomessage">Static Password
+                    </p>
+                </div>
+
+                <div class="staticpasswrap">
+                    <div class="staticpass">
+                        <input type="text" class="staticpassbox" id="staticpassbox" name="statocpass[]" maxlength="20"
+                            required placeholder="Enter your password" pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                            onkeydown="backsp(this, 'otpbox3');" />
+                    </div>
+                </div>
+                <div class="staticresetwrap">
+                    <div class="staticresetchild">
+
+                        <a href="#" class="resetbtn" id="resetbtn"
+                            onclick="msgbox();switching(event, 'resetpasscontent');">RESET PASSWORD</a>
+                    </div>
+                </div>
+                <div class="setverifywrap">
+                    <button class="setverify">Verify & Proceed</button>
+                </div>
+            </div>
+
+            <div class="changingcontent resetpasscontent" id="resetpasscontent">
+                <div class="infomessagewrap">
+                    <p class="infomessage">Reset Password
+                    </p>
+                </div>
+                <div class="entersetotpwrap">
+                    <div class="entersetotp">Enter OTP</div>
+                </div>
+                <div class="setboxeswrap">
+                    <div class="setboxeswrapchild">
+                        <input type="password" class="setbox" id="resetbox1" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('resetbox1','resetbox2',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox1');" />
+                        <input type="password" class="setbox" id="resetbox2" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('resetbox2','resetbox3',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox1');" disabled />
+                        <input type="password" class="setbox" id="resetbox3" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('resetbox3','resetbox4',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox2');" disabled />
+                        <input type="password" class="setbox" id="resetbox4" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('resetbox4','resetbox5',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox3');" disabled />
+                        <input type="password" class="setbox" id="resetbox5" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('resetbox5','resetbox6',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox4');" disabled />
+                        <input type="password" class="setbox" id="resetbox6" name="set[]" maxlength="1" required
+                            placeholder=" " pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('resetbox6','setverifybtn',this.pattern);setemptied(event);"
+                            onkeydown="backsp(this, 'setbox5');" disabled />
+                        <div class="req">
+                            Your OTP must be in numbers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setresendwrap">
+                    <div class="setresendchild">
+
+                        <a href="#" class="resendotpbtn2" id="resendOTPbtn2" onclick="msgbox()">RESEND OTP</a>
+                    </div>
+                </div>
+
+                <div class="passexpirywrap">
+                    <div class="passexpirychild">
+                        <div class="passmonthwrap">
+                            <p>Expiry Month</p>
+                            <input type="text" class="passexpirybox" id="resetpassmonth" name="passexpiry[]"
+                                maxlength="2" required placeholder="MM" pattern="(?=.*\d).{1,1}"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                                onkeydown="backsp(this, 'otpbox3');" />
+                        </div>
+                        <div class="passyearwrap">
+                            <p>Expiry Year</p>
+                            <input type="text" class="passexpirybox" id="resetpassyear" name="passexpiry[]"
+                                maxlength="2" required placeholder="YY" pattern="(?=.*\d).{1,1}"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                                onkeydown="backsp(this, 'otpbox3');" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="passcreatewrap">
+                    <div class="passcreate">
+                        <p>Create Password</p>
+                        <input type="text" class="passcreatebox" id="resetpasscreatebox" name="passcreate[]"
+                            maxlength="20" required placeholder="Enter your password" pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                            onkeydown="backsp(this, 'otpbox3');" />
+                    </div>
+                </div>
+
+                <div class="passcreatewrap">
+                    <div class="passcreate">
+                        <p>Confirm Password</p>
+                        <input type="text" class="passcreatebox" id="resetpassconfirmbox" name="passconfirm[]"
+                            maxlength="20" required placeholder="Confirm your password" pattern="(?=.*\d).{1,1}"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');mvCursor('passexpirybox4','passexpirybox5',this.pattern);passexpiryemptied(event);"
+                            onkeydown="backsp(this, 'otpbox3');" />
+                    </div>
+                </div>
+
+                <div class="setverifywrap">
+                    <button class="setverify">Reset Password</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="footer" class="footer">
+            <div class="footerlogowrapper">
+                <div class="partnerwrap">
+                    <img src="img/Linq.svg" id="partnerlogo" class="partnerlogo" />
+                </div>
+                <img src="img/Visa n PCI.svg" class="visapci" />
+                <img src="img/Copyright.svg" class="copyright">
+            </div>
+        </div>
+
+    </div>
+    <script src="styles.js"></script>
+    <script src="test.js"></script>
+    <script type="text/javascript">
+        setTimeout(() => {
+            document.getElementById("errorBox").style.visibility = "visible";
+        }, 3000);
+        setTimeout(() => {
+            document.getElementById("visa_logo").style.visibility = "visible";
+        }, 600);
+        setTimeout(() => {
+            document.getElementById("body").style.visibility = "visible";
+        }, 600);
+    </script>
+</body>
+
+</html>
